@@ -1,0 +1,15 @@
+{
+    "dataset": "CIC-IDS2017",
+    "seeds": [
+        1103,
+        2207
+    ],
+    "splits": [
+        "train",
+        "utility_val",
+        "gate_dev",
+        "sealed_test"
+    ],
+    "governance": "Sealed test partition remains uninspected during Phase F0",
+    "schema_hash": "dc14ed7b69a19f2cee35f749a7b57f3a479aeca4ea39a7e06050910cf99f6f44"
+}

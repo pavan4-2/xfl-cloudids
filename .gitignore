@@ -1,0 +1,21 @@
+﻿# Data directory exclusions (Keep metadata and manifests only)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Environment & local state
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Artifacts & MLflow
+artifacts/
+mlruns/
+logs/*
+!logs/.gitkeep
+results/*
+!results/.gitkeep

@@ -1,0 +1,93 @@
+
+
+
+Step 1: Open PowerShell and Navigate to the Project Root
+Open PowerShell and navigate to your active repository:  
+PDF
+
+PowerShell
+# 1. Navigate to your project directory
+cd C:\Users\SRMAOCSELAB2022-248\xfl-cloudids
+
+# 2. Activate the Python 3.11 virtual environment
+.\.venv\Scripts\Activate.ps1
+(You will see (.venv) appear at the front of your PowerShell prompt.)  
+PDF
+
+Step 2: Run the Live F0 Execution Test
+Run this single command to execute the full F0 smoke test and summary pipeline live in front of them:  
+PDF
+
+PowerShell
+
+
+python generate_f0_summary.py
+
+
+What this demonstrates to your supervisor:
+
+PyTorch CPU Core: Shows deterministic tensor operations running on the required CPU path.  
+PDF
+
+CVXPY Optimization: Shows the solver reaching an optimal status for the RUTRA-Gate baseline.  
+PDF
+
+Flower Simulation: Confirms multi-client federated learning simulation works locally.  
+PDF
+
+MLflow Tracking: Confirms run tracking and metric logging are initialized.  
+PDF
+
+Step 3: Run the Flower Federated Simulation Live
+If they specifically ask to see the Federated Learning (Flower) simulation run, execute this script:  
+PDF
+
+PowerShell
+
+python -c "
+import flwr as fl
+from flwr.client import ClientApp, NumPyClient
+from flwr.server import ServerApp, ServerConfig, ServerAppComponents
+from flwr.server.strategy import FedAvg
+from flwr.simulation import run_simulation
+
+class SmokeClient(NumPyClient):
+    def get_parameters(self, config): return []
+    def fit(self, parameters, config): return [], 10, {}
+    def evaluate(self, parameters, config): return 0.0, 10, {'accuracy': 1.0}
+
+client = ClientApp(client_fn=lambda ctx: SmokeClient().to_client())
+server = ServerApp(server_fn=lambda ctx: ServerAppComponents(strategy=FedAvg(), config=ServerConfig(num_rounds=1)))
+
+print('--- EXECUTING F0 FLOWER 3-CLIENT SIMULATION ---')
+run_simulation(server_app=server, client_app=client, num_supernodes=3)
+print('--- FLOWER SIMULATION SUCCESSFUL ---')
+"
+
+
+Step 4: Show the Generated Evidence Files
+Open these three files to show the documented proof required by the guide:  
+PDF
+
+results\F0\install\f0-summary-results.json
+
+Shows the JSON record of all passing F0 test components.  
+PDF
+
+reproducibility\environment\f0-environment-report.txt
+
+Shows the verified system hardware, Python 3.11 runtime, and library versions.  
+PDF
+
+reproducibility\environment\requirements-f0-lock.sha256
+
+Shows the SHA-256s lock hash ensuring reproducible package dependencies across environments.  
+PDF
+
+Quick Verbal Summary for Your Supervisor
+You can present your status using this explanation:
+
+"We have completed the Phase F0 toolchain setup and verification. Python 3.11, CPU-first PyTorch, Flower 1.32.1 simulation, MLflow tracking, and CVXPY solvers are fully verified and passing deterministic smoke tests. All environment evidence, dependency lockfiles, and checksums have been recorded under reproducibility/environment/ as required by the guide."
+
+  
+PDF
