@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+artifacts/*
+!artifacts/.gitkeep
+evidence/terminal_logs/*
+!evidence/terminal_logs/.gitkeep
+smoke/
+*.npz
+*.pt
+*.pth

@@ -1,0 +1,99 @@
+{
+  "protocol": "XFL-CloudIDS F0-R1",
+  "version": "1.0",
+  "amendment": "F0-R1-A1",
+  "dataset": "CIC-IDS2017",
+  "rows_cap": 750000,
+  "rare_preserve_max_count": 2500,
+  "splits": {
+    "train": 0.6,
+    "utility": 0.15,
+    "gate": 0.1,
+    "sealed_test": 0.15
+  },
+  "tenants": 5,
+  "seeds": [
+    17,
+    29
+  ],
+  "scenarios": [
+    {
+      "name": "alpha_0p3",
+      "alpha": 0.3
+    },
+    {
+      "name": "alpha_0p1",
+      "alpha": 0.1
+    }
+  ],
+  "model": {
+    "hidden": [
+      128,
+      64
+    ],
+    "dropout": 0.2,
+    "normalization": "LayerNorm"
+  },
+  "training": {
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "local_epochs": 2,
+    "rounds": 10,
+    "fedprox_mu": 0.01
+  },
+  "decision_rounds": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "negative_transfer_margin": 0.005,
+  "material_loss_margin": 0.02,
+  "reliability_gamma": [
+    0.8,
+    0.9,
+    0.95
+  ],
+  "bootstrap": 1000,
+  "utility_windows": 3,
+  "risk": {
+    "budget": 0.2,
+    "cvar_lambda": 0.25,
+    "q": 0.8
+  },
+  "gate_tolerances": {
+    "f1_margin": 0.0,
+    "far": 0.005,
+    "worst_class_recall": 0.01
+  },
+  "nontrivial": {
+    "prediction_change": 0.001,
+    "external_weight_mass": 0.01
+  },
+  "decision_thresholds": {
+    "r1_2_nt_rate": 0.2,
+    "r1_2_material_cases": 2,
+    "r1_3_receiver_top_contributor_fraction": 0.25,
+    "r1_4_auc": 0.7,
+    "r1_4_spearman_abs": 0.4,
+    "r1_5_worst_tenant_headroom": 0.03,
+    "r1_5_oracle_nt_reduction": 0.3,
+    "r1_5_rutra_nt_reduction": 0.25,
+    "r1_5_min_harmful": 5,
+    "r1_5_harmful_rejection": 0.7,
+    "r1_5_min_beneficial": 5,
+    "r1_5_beneficial_acceptance": 0.6,
+    "r1_5_min_nontrivial_accepted": 5,
+    "r1_5_min_cases": 100
+  },
+  "utility_min_examples": 1,
+  "utility_success_threshold": 0.0,
+  "reliability_lower_quantile": 0.05,
+  "temporal_mu": 0.05,
+  "optimizer": {
+    "max_iterations": 200,
+    "tolerance": 1e-07
+  }
+}
