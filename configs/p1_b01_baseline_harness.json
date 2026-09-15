@@ -1,0 +1,15 @@
+{
+  "step_id": "P1-B01",
+  "purpose": "publication-oriented baseline and experiment harness implementation",
+  "branch": "p1-b01-baseline-harness",
+  "baseline_registry": ["local_only", "fedavg", "fedprox", "scaffold", "ditto", "fedfomo"],
+  "common_metrics": ["accuracy", "macro_f1", "far", "worst_class_recall"],
+  "frozen_scientific_seeds_for_later_runner": [17, 29, 41, 73, 101],
+  "result_key_fields": ["method", "scenario", "seed", "round", "receiver", "split"],
+  "sealed_final_test_access": false,
+  "notes": [
+    "P1-B01 implements reusable baseline primitives and result schema only.",
+    "No scientific dataset run or model training is performed in this step.",
+    "Full publication baseline hyperparameters will be frozen at the P1-02/P2 experiment-runner stage."
+  ]
+}
