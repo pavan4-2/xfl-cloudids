@@ -1,0 +1,15 @@
+{
+  "cpu_count": 20,
+  "cuda_available": true,
+  "cuda_version": "13.2",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "machine": "AMD64",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+  "python": "3.11.14 (main, Feb 12 2026, 00:37:49) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\SRMAOCSELAB2022-248\\xfl-cloudids\\.venv\\Scripts\\python.exe",
+  "sklearn": "1.9.0",
+  "step": "R0",
+  "system": "SYSTEM5",
+  "torch": "2.13.0+cu132"
+}

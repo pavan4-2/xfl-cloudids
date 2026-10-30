@@ -1,0 +1,81 @@
+{
+  "benign_label": 0,
+  "bridge": "C:\\Users\\SRMAOCSELAB2022-248\\Desktop\\XFL_P1_08_A1_SYSTEM5\\bridge",
+  "canonical_manifest": "manifest_alpha_0p3_seed17.json",
+  "canonical_rows": {
+    "gate": 75003,
+    "train": 450000,
+    "utility": 74998,
+    "validation": 37501
+  },
+  "duplicate_audit": {
+    "train_vs_gate": {
+      "candidate_duplicate_rows": 2617,
+      "candidate_rows": 75003,
+      "candidate_unique_signatures": 72386,
+      "elapsed_seconds": 0.8939847999999984,
+      "reference_rows": 450000,
+      "reference_rows_matching_candidate_signature": 19719,
+      "unique_overlapping_signatures": 3934
+    },
+    "train_vs_utility": {
+      "candidate_duplicate_rows": 2608,
+      "candidate_rows": 74998,
+      "candidate_unique_signatures": 72390,
+      "elapsed_seconds": 0.8416457000002993,
+      "reference_rows": 450000,
+      "reference_rows_matching_candidate_signature": 19644,
+      "unique_overlapping_signatures": 3952
+    },
+    "train_vs_validation": {
+      "candidate_duplicate_rows": 1072,
+      "candidate_rows": 37501,
+      "candidate_unique_signatures": 36429,
+      "elapsed_seconds": 0.7736392000006163,
+      "reference_rows": 450000,
+      "reference_rows_matching_candidate_signature": 15878,
+      "unique_overlapping_signatures": 2081
+    }
+  },
+  "elapsed_seconds": 11.643947099999423,
+  "feature_dim": 78,
+  "global_role_count_consistency": {
+    "gate": {
+      "consistent": true,
+      "unique_global_count_signatures": 1
+    },
+    "train": {
+      "consistent": true,
+      "unique_global_count_signatures": 1
+    },
+    "utility": {
+      "consistent": false,
+      "unique_global_count_signatures": 4
+    },
+    "validation": {
+      "consistent": false,
+      "unique_global_count_signatures": 4
+    }
+  },
+  "n_classes": 15,
+  "rare_classes_train_lt_100": [
+    8,
+    9,
+    13
+  ],
+  "scientific_interpretation": "SUPERVISOR_ONLY",
+  "scope": "development_only",
+  "sealed_final_test_access": false,
+  "status": "TECHNICAL_PASS",
+  "step": "R0",
+  "system": "SYSTEM5",
+  "validation_support_lt_10": [
+    8,
+    9,
+    13
+  ],
+  "very_rare_classes_train_lt_20": [
+    8,
+    13
+  ]
+}

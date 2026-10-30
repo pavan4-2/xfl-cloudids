@@ -1,0 +1,16 @@
+class_id,train_rows,validation_rows,rare_train_lt_100,very_rare_train_lt_20,unstable_validation_support_lt_10
+0,359864,29988,False,False,False
+1,1179,99,False,False,False
+2,20269,1688,False,False,False
+3,1630,136,False,False,False
+4,36582,3049,False,False,False
+5,870,73,False,False,False
+6,918,77,False,False,False
+7,1257,105,False,False,False
+8,6,1,True,True,True
+9,22,1,True,False,True
+10,25161,2097,False,False,False
+11,934,78,False,False,False
+12,904,75,False,False,False
+13,13,1,True,True,True
+14,391,33,False,False,False
