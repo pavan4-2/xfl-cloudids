@@ -1,0 +1,34 @@
+{
+  "automatic_r3_authorization": false,
+  "calibration_seed": 11,
+  "candidates_run": [
+    "A_MLP_CE",
+    "B_MLP_SMOTE_CE",
+    "C_MLP_FOCAL",
+    "D_CNN1D_SMOTE_CE"
+  ],
+  "canonical_manifest": "manifest_alpha_0p3_seed17.json",
+  "deduplicated_validation_rows": 34404,
+  "scientific_interpretation": "SUPERVISOR_ONLY",
+  "scientific_status": "NO_CANDIDATE_PASSED",
+  "sealed_final_test_access": false,
+  "selected_candidate": null,
+  "stable_classes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10,
+    11,
+    12,
+    14
+  ],
+  "status": "TECHNICAL_PASS",
+  "step": "R2-S5",
+  "system": "SYSTEM5",
+  "train_duplicate_validation_rows_removed": 3097
+}

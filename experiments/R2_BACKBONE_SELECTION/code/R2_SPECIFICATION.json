@@ -1,0 +1,107 @@
+{
+  "program": "XFL-CloudIDS SOTA Recovery",
+  "stage": "R2-S5 bounded neural backbone and imbalance selection",
+  "version": "R2-S5-v1.0",
+  "frozen_on": "2026-10-31",
+  "hard_experimental_closure": "2026-12-10",
+  "scope": "development_only_no_sealed_final_access",
+  "canonical_manifest": "manifest_alpha_0p3_seed17.json",
+  "calibration_seed": 11,
+  "system": "SYSTEM5",
+  "expected_bridge_rows": {
+    "train": 450000,
+    "validation": 37501
+  },
+  "expected_feature_dim": 78,
+  "expected_n_classes": 15,
+  "benign_label": 0,
+  "reporting": {
+    "primary": "canonical pooled validation after removal of exact X+y signatures occurring in pooled TRAIN",
+    "secondary": "raw canonical pooled validation",
+    "stable_class_support_min": 20,
+    "selection_metric": "stable_macro_f1"
+  },
+  "shared_training": {
+    "batch_size": 512,
+    "max_epochs": 30,
+    "min_epochs": 8,
+    "early_stopping_patience": 6,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0001,
+    "scaler": "train_optimizer_rows_only_standardization",
+    "internal_early_stop_fraction": 0.1,
+    "early_stop_metric": "stable_macro_f1",
+    "dropout": 0.3
+  },
+  "smote": {
+    "type": "deterministic_bounded_train_only_smote",
+    "target_per_class": 5000,
+    "k_neighbors_max": 5,
+    "fit_scope": "optimizer training rows only after train-only standardization",
+    "validation_access": false
+  },
+  "focal": {
+    "gamma": 2.0,
+    "alpha_rule": "inverse_sqrt_frequency normalized to mean 1 and clipped to [0.25, 8.0] using optimizer training rows only"
+  },
+  "candidates": [
+    {
+      "id": "A_MLP_CE",
+      "architecture": "MLP_256_128_BN_ReLU",
+      "imbalance": "none",
+      "loss": "cross_entropy"
+    },
+    {
+      "id": "B_MLP_SMOTE_CE",
+      "architecture": "MLP_256_128_BN_ReLU",
+      "imbalance": "bounded_smote",
+      "loss": "cross_entropy"
+    },
+    {
+      "id": "C_MLP_FOCAL",
+      "architecture": "MLP_256_128_BN_ReLU",
+      "imbalance": "none",
+      "loss": "focal_gamma_2"
+    },
+    {
+      "id": "D_CNN1D_SMOTE_CE",
+      "architecture": "CNN1D_32_64_pool16_FC128",
+      "imbalance": "bounded_smote",
+      "loss": "cross_entropy"
+    }
+  ],
+  "selection_gate": {
+    "accuracy_min": 0.97,
+    "weighted_f1_min": 0.97,
+    "stable_macro_f1_min": 0.85,
+    "far_max": 0.03,
+    "worst_stable_recall_min": 0.3
+  },
+  "selection_rule": "Among candidates passing every gate, choose highest stable_macro_f1; tie-break by lower FAR, higher weighted_f1, then fixed candidate order. If none pass, emit NO_CANDIDATE_PASSED. No manual override by student.",
+  "scientific_rule": "R2 is one bounded development-only selection stage. It does not authorize R3 automatically; supervisor review is mandatory.",
+  "trusted_environment": true,
+  "checksum_verification_required": false,
+  "forbidden": [
+    "sealed/final-test access",
+    "utility or gate use for candidate selection",
+    "parameter editing",
+    "additional candidates",
+    "post-result threshold changes",
+    "rerun for favorable results",
+    "dataset regeneration/replacement"
+  ],
+  "github": {
+    "repo": "https://github.com/pavan4-2/xfl-cloudids",
+    "path": "experiments/R2_BACKBONE_SELECTION",
+    "exclude": [
+      "raw data",
+      "development NPZ files",
+      "sealed/final test",
+      "checkpoints",
+      ".pt",
+      ".pth",
+      ".ckpt"
+    ]
+  }
+}

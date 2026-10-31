@@ -1,0 +1,30 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261031182025
+Username: SRMAPCSELAB2022\SRMAOCSELAB2022-248
+RunAs User: SRMAPCSELAB2022\SRMAOCSELAB2022-248
+Configuration Name: 
+Machine: SRMAPCSELAB2022 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\run_r2_system5.ps1
+Process ID: 11328
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\SRMAOCSELAB2022-248\Desktop\XFL_R2_SYSTEM5\XFL_R2_SYSTEM5.log
+===== XFL-CLOUDIDS R2-S5 BOUNDED BACKBONE/IMBALANCE SELECTION =====
+Development TRAIN/VALIDATION only. Utility, gate and sealed final test are not authorized.
+
+
+
+===== R2 SYSTEM 5 TECHNICAL PASS =====
+Read R2_SELECTION.json only to identify the machine-generated scientific status. Do not alter or rerun.
+**********************
+Windows PowerShell transcript end
+End time: 20261031182444
+**********************

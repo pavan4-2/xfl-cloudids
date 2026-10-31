@@ -1,0 +1,34 @@
+{
+  "canonical_manifest": "manifest_alpha_0p3_seed17.json",
+  "data_origin": "CICIDS2017_APPROVED_DEVELOPMENT",
+  "deduplicated_validation_rows": 34404,
+  "internal_early_stop_rows": 44997,
+  "optimizer_rows": 405003,
+  "partition_lock": "d117dc7f427439c0dab661d1c4c040db3063c616f6be092858743462f6257fc2",
+  "partition_seed": 17,
+  "raw_validation_rows": 37501,
+  "scenario": "alpha_0p3",
+  "sealed_final_test_access": false,
+  "stable_classes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10,
+    11,
+    12,
+    14
+  ],
+  "stable_support_min": 20,
+  "train_duplicate_validation_rows_removed": 3097,
+  "train_rows": 450000,
+  "unstable_classes": [
+    8,
+    9,
+    13
+  ]
+}
