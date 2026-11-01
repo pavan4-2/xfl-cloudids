@@ -1,0 +1,38 @@
+{
+  "client_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "manifest": "manifest_alpha_0p3_seed17.json",
+  "n_clients": 5,
+  "only_arrays_loaded": [
+    "train",
+    "validation"
+  ],
+  "partition_lock": "d117dc7f427439c0dab661d1c4c040db3063c616f6be092858743462f6257fc2",
+  "partition_seed": 17,
+  "probe_withheld_from_optimizer": 44991,
+  "scenario": "alpha_0p3",
+  "stable_classes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10,
+    11,
+    12,
+    14
+  ],
+  "train_only_scaler_digest": "32889f285eda8fd436de8c8fe33b026c74c129a72c945fb158d7e7d97266ce4f",
+  "train_rows": 450000,
+  "validation_removed_train_overlaps": 3097,
+  "validation_rows_primary": 34404,
+  "validation_rows_raw": 37501
+}

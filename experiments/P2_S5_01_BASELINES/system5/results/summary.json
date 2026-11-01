@@ -1,0 +1,62 @@
+{
+  "R2_original_gate": "NO_CANDIDATE_PASSED",
+  "backbone": "B_MLP_SMOTE_CE",
+  "calibration_seed": 11,
+  "caveats": [
+    "Single seed and partition, NOT independent generalization",
+    "FedProx proximal coefficient is a frozen engineering default for this pilot",
+    "SMOTE per-client training only; singleton copies removed",
+    "Primary evaluation excludes exact TRAIN-overlap validation rows",
+    "Stable-class macro-F1 applies global support threshold, not client-level support"
+  ],
+  "data_access": [
+    "train",
+    "validation"
+  ],
+  "last_round_summary": {
+    "FEDAVG": {
+      "mean_client_accuracy": 0.8608049212716045,
+      "mean_client_far": 0.020267947926897612,
+      "mean_client_supported_macro_f1": 0.551078251440823,
+      "method": "FEDAVG",
+      "n_clients": 5,
+      "negative_transfer_vs_local_only_count": 1,
+      "round": 5,
+      "worst_client_supported_macro_f1": 0.475522440152052
+    },
+    "FEDPROX": {
+      "mean_client_accuracy": 0.8597333402671168,
+      "mean_client_far": 0.018497242650810358,
+      "mean_client_supported_macro_f1": 0.5313390163489274,
+      "method": "FEDPROX",
+      "n_clients": 5,
+      "negative_transfer_vs_local_only_count": 1,
+      "round": 5,
+      "worst_client_supported_macro_f1": 0.4466300438099888
+    },
+    "LOCAL_ONLY": {
+      "mean_client_accuracy": 0.8683350016503726,
+      "mean_client_far": 0.10556697518738196,
+      "mean_client_supported_macro_f1": 0.43832001697950884,
+      "method": "LOCAL_ONLY",
+      "n_clients": 5,
+      "negative_transfer_vs_local_only_count": 0,
+      "round": 5,
+      "worst_client_supported_macro_f1": 0.31534435850896175
+    }
+  },
+  "local_epochs": 2,
+  "methods": [
+    "LOCAL_ONLY",
+    "FEDAVG",
+    "FEDPROX"
+  ],
+  "mu_fedprox": 0.01,
+  "partition_lock": "d117dc7f427439c0dab661d1c4c040db3063c616f6be092858743462f6257fc2",
+  "privacy_note": "Centralized simulation shares TRAIN-only feature moments and FL states; no secure aggregation claim.",
+  "rounds": 5,
+  "scenario": "alpha_0p3",
+  "scientific_status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "step": "P2-S5-01",
+  "technical_status": "TECHNICAL_PASS"
+}
