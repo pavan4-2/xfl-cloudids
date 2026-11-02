@@ -1,0 +1,55 @@
+{
+  "project": "XFL-CloudIDS",
+  "step": "P2-S5-02",
+  "stage": "One bounded development control for BN-state consistency; not confirmatory",
+  "methods": [
+    "LOCAL_ONLY",
+    "FEDAVG_LOCALBN"
+  ],
+  "backbone": "B_MLP_SMOTE_CE",
+  "original_R2_scientific_status": "NO_CANDIDATE_PASSED",
+  "architecture": "MLP_256_128_BN_ReLU",
+  "n_classes": 15,
+  "feature_dim": 78,
+  "dropout": 0.3,
+  "local_training_loss": "cross_entropy",
+  "client_smote_target": 5000,
+  "client_smote_max_k": 5,
+  "client_smote_singleton": "discard_repeated_synthetic_singletons",
+  "manifest": "manifest_alpha_0p3_seed17.json",
+  "partition_lock": "d117dc7f427439c0dab661d1c4c040db3063c616f6be092858743462f6257fc2",
+  "calibration_seed": 11,
+  "rounds": 5,
+  "local_epochs": 2,
+  "batch_size": 512,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "probe_fraction_of_train": 0.1,
+  "fedprox_mu": 0.01,
+  "fedprox_mu_note": "Predeclared implementation default for preliminary pilot, not selected after observing results",
+  "device": "cpu_required",
+  "bn_buffer_policy": "average trainable parameters; retain each client BN running_mean, running_var, num_batches_tracked",
+  "aggregation_weights": "original client optimizer TRAIN counts excluding withheld probe, not synthetic SMOTE counts",
+  "preprocessing": "train_only_pooled_standardization_matching_System6; centralized_simulation_limit",
+  "validation": "deduplicated_exact_X_plus_y_overlap_with_pooled_original_train; metrics_descriptive_only",
+  "negative_transfer_margin_supported_macro": 0.005,
+  "data_roles_permitted": [
+    "train",
+    "validation"
+  ],
+  "data_roles_forbidden": [
+    "utility",
+    "gate",
+    "sealed_final_test"
+  ],
+  "forbid": [
+    "hyperparameter changes",
+    "favorable-result reruns",
+    "model checkpoint upload",
+    "sealed test access",
+    "dataset upload"
+  ],
+  "scientific_success": "not presumed; record unfavorable outcomes",
+  "original_result": "P2_S5_01_RESULTS.zip preserved; do not regenerate",
+  "description": "Isolate local BN buffer retention; no hyperparameter adjustment"
+}

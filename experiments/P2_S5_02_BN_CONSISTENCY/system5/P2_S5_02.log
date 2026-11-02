@@ -1,0 +1,27 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261102171654
+Username: SRMAPCSELAB2022\SRMAOCSELAB2022-248
+RunAs User: SRMAPCSELAB2022\SRMAOCSELAB2022-248
+Configuration Name: 
+Machine: SRMAPCSELAB2022 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\run_p2_s5_02.ps1
+Process ID: 14556
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+===== XFL-CLOUDIDS P2-S5-02: BATCHNORM CONSISTENCY DEVELOPMENT =====
+Only TRAIN and VALIDATION; P2-S5-01 preserved; no gate/utility/test.
+
+
+P2_S5_02_TECHNICAL_PASS
+**********************
+Windows PowerShell transcript end
+End time: 20261102172007
+**********************

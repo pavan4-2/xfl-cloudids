@@ -1,0 +1,55 @@
+{
+  "aggregation_weights": "original client optimizer TRAIN counts excluding withheld probe, not synthetic SMOTE counts",
+  "architecture": "MLP_256_128_BN_ReLU",
+  "backbone": "B_MLP_SMOTE_CE",
+  "batch_size": 512,
+  "bn_buffer_policy": "average trainable parameters; retain each client BN running_mean, running_var, num_batches_tracked",
+  "calibration_seed": 11,
+  "client_smote_max_k": 5,
+  "client_smote_singleton": "discard_repeated_synthetic_singletons",
+  "client_smote_target": 5000,
+  "data_roles_forbidden": [
+    "utility",
+    "gate",
+    "sealed_final_test"
+  ],
+  "data_roles_permitted": [
+    "train",
+    "validation"
+  ],
+  "description": "Isolate local BN buffer retention; no hyperparameter adjustment",
+  "device": "cpu_required",
+  "dropout": 0.3,
+  "feature_dim": 78,
+  "fedprox_mu": 0.01,
+  "fedprox_mu_note": "Predeclared implementation default for preliminary pilot, not selected after observing results",
+  "forbid": [
+    "hyperparameter changes",
+    "favorable-result reruns",
+    "model checkpoint upload",
+    "sealed test access",
+    "dataset upload"
+  ],
+  "learning_rate": 0.0005,
+  "local_epochs": 2,
+  "local_training_loss": "cross_entropy",
+  "manifest": "manifest_alpha_0p3_seed17.json",
+  "methods": [
+    "LOCAL_ONLY",
+    "FEDAVG_LOCALBN"
+  ],
+  "n_classes": 15,
+  "negative_transfer_margin_supported_macro": 0.005,
+  "original_R2_scientific_status": "NO_CANDIDATE_PASSED",
+  "original_result": "P2_S5_01_RESULTS.zip preserved; do not regenerate",
+  "partition_lock": "d117dc7f427439c0dab661d1c4c040db3063c616f6be092858743462f6257fc2",
+  "preprocessing": "train_only_pooled_standardization_matching_System6; centralized_simulation_limit",
+  "probe_fraction_of_train": 0.1,
+  "project": "XFL-CloudIDS",
+  "rounds": 5,
+  "scientific_success": "not presumed; record unfavorable outcomes",
+  "stage": "One bounded development control for BN-state consistency; not confirmatory",
+  "step": "P2-S5-02",
+  "validation": "deduplicated_exact_X_plus_y_overlap_with_pooled_original_train; metrics_descriptive_only",
+  "weight_decay": 0.0001
+}

@@ -1,0 +1,7 @@
+{
+  "deterministic_warning_only": true,
+  "device": "cpu",
+  "numpy": "2.4.6",
+  "python": "3.11.14",
+  "torch": "2.13.0+cu132"
+}
